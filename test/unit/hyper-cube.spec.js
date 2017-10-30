@@ -60,6 +60,17 @@ describe('HyperCube', () => {
     );
   });
 
+  it('should not be possible to add a hyper cube layout with data pages with qArea.qTop larger than qHeight', () => {
+    let defintion = mockHyperCubes.MultipleDataPagesMissingPages;
+
+    defintion.qDataPages[0].qArea.qLeft = defintion.qDataPages[0].qArea.qLeft + 1;
+    expect(
+      () => new HyperCube(defintion, 'PivotHyperCube')
+    ).to.throw(
+      'qDataPages have data pages that\'s not of full qWidth.'
+    );
+  });
+
   it('should not be possible to add a hyper cube layout without qDataPages[].qMatrix', () => {
     expect(
       () => new HyperCube(
