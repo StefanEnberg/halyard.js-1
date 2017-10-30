@@ -22,6 +22,8 @@ halyard.setDefaultSetStatements({DateFormat: 'MM-DD-YYYY'});
 // getScript() will return SET DateFormat='MM-DD-YYYY';
 ```
 
+
+
 Any entered default set statement will be replaced by default if this method is called a second time with `defaultSetStatement` containing already defined keys.
 If `preservePreviouslyEnteredValues` is set to true, then previously entered set statements will be preserved even if the `setDefaultSetStatements` method is called multiple times.
 
